@@ -605,6 +605,11 @@ section {
 
   .section-title h2 { font-size: 36px; }
 
+
+  .hero {
+    height: 60vh;
+  }
+
   /* 인트로 */
   .intro-inner {
     flex-direction: column;
@@ -680,6 +685,10 @@ section {
 @media screen and (max-width: 600px) {
   /* 헤더 */
   .logo { font-size: 18px; }
+
+  .hero {
+    height: 60vh;
+  }
 
   /* 섹션 패딩 */
   section { padding: 56px 0; }
