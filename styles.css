@@ -1,0 +1,642 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #fffaf7;
+  color: #2f2018;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  cursor: url('img/mouse_1.png') 16 16, auto;
+}
+
+a:hover,
+button:hover,
+.flow-item:hover {
+  cursor: url('img/mouse_2.png') 16 16, pointer;
+}
+
+.inner {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+  background-color: rgba(255,255,255,0.9);
+  border-bottom: 1px solid #e7ddd5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* 화면 꽉 채움 */
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 비율 유지하면서 꽉 채움 */
+}
+
+section {
+  padding: 100px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: #7c6658;
+  font-size: 15px;
+}
+
+.intro-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+
+.intro-left,
+.intro-right {
+  width: 50%;
+}
+
+
+.small-title {
+  font-size: 14px;
+  color: #b57b53;
+  margin-bottom: 16px;
+}
+
+.intro-left h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 64px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.intro-left h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #7c6658;
+  margin-bottom: 12px;
+}
+
+.intro-photo {
+  width: 100%;
+  height: 520px;
+  background-color: #e8d7cb;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-family: 'DM Serif Display', serif;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 18px 0;
+}
+
+.marquee-track {
+  display: inline-block;
+  animation: marqueeLeft 22s linear infinite;
+}
+
+.marquee-track.reverse {
+  animation: marqueeRight 22s linear infinite;
+}
+
+.marquee-track span {
+  display: inline-block;
+  margin-right: 50px;
+  font-size: 42px;
+  color: #d8c1b2;
+  font-family: 'Patrick Hand', cursive;
+}
+
+.character-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.character-card {
+  width: 50%;
+  height: 620px;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+  background-size: cover;
+  background-position: center;
+}
+
+.character-card:hover {
+  transform: translateY(-8px);
+}
+.character-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+
+/* 기본 상태에서는 첫 번째만 보이기 */
+.img1 {
+  opacity: 1;
+}
+
+/* hover하면 3장이 반복 재생 */
+.character-card:hover .img1 {
+  animation: cardFade1 4.5s infinite;
+}
+
+.character-card:hover .img2 {
+  animation: cardFade2 4.5s infinite;
+}
+
+.character-card:hover .img3 {
+  animation: cardFade3 4.5s infinite;
+}
+
+.card-label {
+  position: absolute;
+  z-index: 10;
+  left: 20px;
+  bottom: 20px;
+  background-color: rgba(255,255,255,0.85);
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 25px;
+}
+
+
+@keyframes cardFade1 {
+  0%   { opacity: 1; }
+  25%  { opacity: 1; }
+  40%  { opacity: 0; }
+  60%  { opacity: 0; }
+  75%  { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes cardFade2 {
+  0%   { opacity: 0; }
+  25%  { opacity: 0; }
+  40%  { opacity: 1; }
+  60%  { opacity: 1; }
+  75%  { opacity: 0; }
+   90% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes cardFade3 {
+  0%   { opacity: 0; }
+  25%  { opacity: 0; }
+  40%  { opacity: 0; }
+  60%  { opacity: 0; }
+  75%  { opacity: 1; }
+   90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+
+.maltese {
+  background-color: #f3e5dc;
+  background-image: linear-gradient(#f8efe9, #ecdccf);
+}
+
+.maltese:hover {
+  background-color: #ead8cb;
+  background-image: linear-gradient(#f3e6de, #e3cfc0);
+}
+
+.retriever {
+  background-color: #e3c6ab;
+  background-image: linear-gradient(#ebd2bb, #d9b18e);
+}
+
+.retriever:hover {
+  background-color: #d8b08a;
+  background-image: linear-gradient(#e3c6a8, #c99568);
+}
+
+
+
+.season-buttons {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.season-btn {
+  padding: 12px 20px;
+  border: 1px solid #dbc8bb;
+  background-color: #fff;
+  border-radius: 25px;
+  margin: 0 5px 10px 5px;
+  cursor: pointer;
+}
+
+.season-btn.active {
+  background-color: #2f2018;
+  color: #fff;
+}
+
+.season-content {
+  display: none;
+}
+
+.season-content.active {
+  display: block;
+}
+
+.arch-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.arch-side {
+  width: 34%;
+}
+
+.arch-card {
+  background-color: #eee1d7;
+  border-radius: 220px 220px 24px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.big {
+  width: 64%;
+  height: 620px;
+}
+
+.small {
+  width: 100%;
+  height: 300px;
+}
+
+.arch-side .small:first-child {
+  margin-bottom: 20px;
+}
+
+.spring1, .spring2, .spring3 { background-color: #f3dfe4; }
+.summer1, .summer2, .summer3 { background-color: #d9ebf5; }
+.autumn1, .autumn2, .autumn3 { background-color: #f3dfe4; }
+.winter1, .winter2, .winter3 { background-color: #d9ebf5; }
+
+.goods-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid #2f2018;
+  border-left: 1px solid #2f2018;
+  background-color: #fffaf7;
+}
+
+.goods-item {
+  aspect-ratio: 1 / 1;
+  border-right: 1px solid #2f2018;
+  border-bottom: 1px solid #2f2018;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-family: 'DM Serif Display', serif;
+}
+
+.flow-wrap {
+  display: flex;
+  gap: 20px;
+}
+
+.flow-box {
+  width: 50%;
+  height: 760px;
+  overflow: hidden;
+  background-color: #fff0f0;
+  border-radius: 30px;
+  padding: 16px;
+  position: relative;
+}
+
+.flow-track {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+
+.flow-track.down {
+  animation: downMove 30s linear infinite;
+}
+
+.flow-track.up {
+  animation: upMove 30s linear infinite;
+}
+
+.flow-box:hover .flow-track {
+  animation-play-state: paused;
+}
+
+.flow-item {
+  height: 220px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.35s;
+}
+
+.flow-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.35s;
+}
+
+.flow-item:hover {
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
+}
+
+.flow-item:hover::before {
+  transform: scale(1.06);
+}
+
+.left_one::before {
+  background-image: url('./img/left_1.png');
+  width: 100%;
+}
+.left_two::before {
+  background-image: url('./img/left_2.png');
+  width: 100%;
+}
+.left_three::before {
+  background-image: url('./img/left_3.png');
+  width: 100%;
+}
+.left_four::before {
+  background-image: url('./img/left_4.png');
+  width: 100%;
+}
+.left_five::before {
+  background-image: url('./img/left_5.png');
+  width: 100%;
+}
+
+
+.right_one::before {
+  background-image: url('./img/right_1.png');
+  width: 100%;
+}
+.right_two::before {
+  background-image: url('./img/right_2.png');
+  width: 100%;
+}
+.right_three::before {
+  background-image: url('./img/right_3.png');
+  width: 100%;
+}
+.right_four::before {
+  background-image: url('./img/right_4.png');
+  width: 100%;
+}
+.right_five::before {
+  background-image: url('./img/right_5.png');
+  width: 100%;
+}
+
+
+
+
+
+
+.connect-list {
+  display: flex;
+  gap: 20px;
+}
+
+.connect-card {
+  width: 33.33%;
+  background-color: #fff;
+  border: 1px solid #eadfd6;
+  border-radius: 24px;
+  padding: 28px;
+}
+
+.connect-card strong {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 14px;
+  font-family: 'DM Serif Display', serif;
+}
+
+.connect-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #7c6658;
+}
+
+.footer {
+  background-color: #2b1d17;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer h2 {
+  font-family: 'DM Serif Display', serif;
+  margin-bottom: 8px;
+}
+
+.footer p,
+.footer span {
+  color: rgba(255,255,255,0.7);
+}
+
+@keyframes marqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes downMove {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes upMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@media screen and (max-width: 900px) {
+  .menu {
+    display: none;
+  }
+
+  .intro-inner,
+  .character-cards,
+  .arch-wrap,
+  .flow-wrap,
+  .connect-list,
+  .footer-inner {
+    flex-direction: column;
+  }
+
+  .intro-left,
+  .intro-right,
+  .character-card,
+  .big,
+  .arch-side,
+  .flow-box,
+  .connect-card {
+    width: 100%;
+  }
+
+  .goods-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .flow-box {
+    height: 600px;
+  }
+
+  .section-title h2,
+  .intro-left h2 {
+    font-size: 40px;
+  }
+}
+
+
+/* 추가 효과: 시즌 무드 둥둥 뜨기 */
+.arch-card {
+  transition: transform 0.35s, box-shadow 0.35s, background-color 0.35s;
+}
+
+.arch-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* 굿즈 호버 시 다른 이미지가 보이도록 만들기 */
+.goods-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.goods-item::before,
+.goods-item::after {
+  content: "";
+  position: absolute;
+  /* inset: 0; */
+  background-size: cover;
+  background-position: center;
+  /* transition: opacity 0.4s ease; */
+}
+.goods-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.goods-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s;
+}
+
+.goods-item .back {
+  opacity: 0;
+}
+
+.goods-item:hover .back {
+  opacity: 1;
+}
+
+.goods-item:hover .front {
+  opacity: 0;
+}
