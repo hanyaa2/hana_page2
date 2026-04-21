@@ -526,6 +526,19 @@ section {
   border-radius: 24px;
   padding: 28px;
   transition: box-shadow 0.3s, transform 0.3s;
+    background-size: cover;
+  background-position: center;
+}
+
+/* connerct 배경 */
+.connect-card:nth-child(1) {
+  background-image: url('../img/connect_1.png');
+}
+.connect-card:nth-child(2) {
+  background-image: url('../img/connect_2.png');
+}
+.connect-card:nth-child(3) {
+  background-image: url('../img/connect_3.png');
 }
 
 .connect-card:hover {
@@ -546,6 +559,7 @@ section {
   color: #7c6658;
   word-break: break-all;
 }
+
 
 /* ===== FOOTER ===== */
 .footer {
