@@ -532,13 +532,13 @@ section {
 
 /* connerct 배경 */
 .connect-card:nth-child(1) {
-  background-image: url('../img/connect_1.png');
+  background-image: url(./img/connect_1.png);
 }
 .connect-card:nth-child(2) {
-  background-image: url('../img/connect_2.png');
+  background-image: url(./img/connect_2.png);
 }
 .connect-card:nth-child(3) {
-  background-image: url('../img/connect_3.png');
+  background-image: url(./img/connect_3.png);
 }
 
 .connect-card:hover {
