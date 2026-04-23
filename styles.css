@@ -361,17 +361,17 @@ section {
   display: block;
 }
 
-.arch-wrap {
+.season-wrap {
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 
-.arch-side {
+.season-side {
   width: 34%;
 }
 
-.arch-card {
+.season-card {
   background-color: #eee1d7;
   border-radius: 220px 220px 24px 24px;
   position: relative;
@@ -379,7 +379,7 @@ section {
   transition: transform 0.35s, box-shadow 0.35s;
 }
 
-.arch-card a {
+.season-card a {
   display: block;
   width: 100%;
   height: 100%;
@@ -387,7 +387,7 @@ section {
   inset: 0;
 }
 
-.arch-card img {
+.season-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -395,7 +395,7 @@ section {
   display: block;
 }
 
-.arch-card:hover {
+.season-card:hover {
   transform: translateY(-12px);
   box-shadow: 0 18px 30px rgba(0, 0, 0, 0.12);
 }
@@ -410,7 +410,7 @@ section {
   height: 300px;
 }
 
-.arch-side .small:first-child {
+.season-side .small:first-child {
   margin-bottom: 20px;
 }
 
@@ -647,23 +647,23 @@ section {
   .marquee-track span { font-size: 30px; }
 
   /* 시즌 */
-  .arch-wrap {
+  .season-wrap {
     flex-direction: column;
   }
   .big {
     width: 100%;
     height: 420px;
   }
-  .arch-side {
+  .season-side {
     width: 100%;
     display: flex;
     gap: 16px;
   }
-  .arch-side .small {
+  .season-side .small {
     width: 50%;
     height: 220px;
   }
-  .arch-side .small:first-child {
+  .season-side .small:first-child {
     margin-bottom: 0;
   }
 
@@ -730,11 +730,11 @@ section {
 
   /* 시즌 카드 */
   .big { height: 300px; }
-  .arch-side {
+  .season-side {
     flex-direction: column;
     gap: 12px;
   }
-  .arch-side .small {
+  .season-side .small {
     width: 100%;
     height: 200px;
   }
